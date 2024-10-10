@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 
 /**
- * @version Spring 2022
- * @author ITCS 2214
+ * @version 1.0
+ * @author JV
  */
 public class ShoppingListArrayTest {
 
@@ -19,7 +19,6 @@ public class ShoppingListArrayTest {
     public void setupTestCases() {
         instance = new ShoppingListArray();
     }
-    
 
     /**
      * Test of add method, of class ShoppingArray.
@@ -31,21 +30,21 @@ public class ShoppingListArrayTest {
         // Initial state
         assertEquals(0, instance.size());
         assertFalse(instance.contains(entry1));
-        
+
         instance.add(entry1);
-        
+
         // Test general case (size)
         assertEquals(1, instance.size());
 
         // Test general case (content)
         assertTrue(instance.contains(entry1));
-        
+
         // Test combined quantity case
         // Test that matching ignores letter case
-//        int initialQuantity = entry1.getQuantity();
-        
+        // int initialQuantity = entry1.getQuantity();
+
         int diff = 1;
-//        int newQuantity = initialQuantity + diff;
+        // int newQuantity = initialQuantity + diff;
         Grocery duplicate = new Grocery(entry1.getName().toLowerCase(),
                 entry1.getCategory());
         duplicate.setQuantity(diff);
@@ -53,7 +52,7 @@ public class ShoppingListArrayTest {
         System.out.println(instance.toString());
         // and ? do we test anything here?
     }
-    
+
     /**
      * Test of add method expanding, of class ShoppingArray.
      */
@@ -66,18 +65,18 @@ public class ShoppingListArrayTest {
                 1);
         Grocery entry5 = new Grocery("Tide Pods", "Laundry", 9, 1.99f, 4);
         Grocery entry6 = new Grocery("Spam", "Can Meat", 1, 2.99f, 3);
-        
+
         // Initial state
         assertEquals(0, instance.size());
         assertFalse(instance.contains(entry1));
-        
+
         instance.add(entry1);
         instance.add(entry2);
         instance.add(entry3);
         instance.add(entry4);
         instance.add(entry5);
         instance.add(entry6);
-        
+
         // Test expanded capacity (size)
         assertEquals(6, instance.size());
 
@@ -108,11 +107,11 @@ public class ShoppingListArrayTest {
 
         // Test general case (content)
         assertFalse(instance.contains(entry1));
-        
+
         instance.add(entry1);
         instance.add(entry2);
         instance.add(entry3);
-        
+
         // Test remove shifts elements
         // Before shift
         try {
@@ -122,9 +121,9 @@ public class ShoppingListArrayTest {
         } catch (EmptyCollectionException e) {
             fail("Unexpected ECE - testRemove");
         }
-        
+
         assertTrue(instance.remove(entry1));
-        
+
         // After shift
         try {
             assertTrue(instance.find(0).equals(entry2));
@@ -132,7 +131,7 @@ public class ShoppingListArrayTest {
         } catch (EmptyCollectionException e) {
             fail("Unexpected ECE - testRemove");
         }
-        
+
         // Collection bounds changed
         try {
             instance.find(2);
@@ -153,13 +152,12 @@ public class ShoppingListArrayTest {
         try {
             instance.find(0);
             fail("Should throw ECE - testFind");
-        }
-        catch (EmptyCollectionException | IndexOutOfBoundsException e) {
+        } catch (EmptyCollectionException | IndexOutOfBoundsException e) {
             assertTrue(e instanceof EmptyCollectionException);
         }
-        
+
         instance.add(entry1);
-        
+
         // Test element not found exception
         try {
             instance.find(1);
@@ -172,7 +170,7 @@ public class ShoppingListArrayTest {
         assertTrue(instance.contains(entry1));
         try {
             assertEquals(entry1, instance.find(0));
-            
+
         } catch (EmptyCollectionException | IndexOutOfBoundsException e) {
             fail("Should not throw exception - testFind");
         }
@@ -200,7 +198,7 @@ public class ShoppingListArrayTest {
         // Test element found case
         try {
             assertEquals(0, instance.indexOf(entry1));
-            
+
         } catch (ElementNotFoundException e) {
             fail("Should not throw exception - testIndexOf");
         }
