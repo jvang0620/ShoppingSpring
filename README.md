@@ -4,6 +4,56 @@
 
 This repository contains the code for a Shopping application implemented in Java using object-oriented principles. The application models a shopping system for grocery items, with functionality to create, manage, and manipulate a collection of these items. The program features exception handling for specific scenarios, such as empty collections or missing elements, and incorporates custom exceptions to manage errors effectively. This project demonstrates the use of encapsulation, comparisons between objects, and handling operations through custom exceptions.
 
+## Project Out
+
+```bash
+Does list contain Pistachio Ice Cream? true
+Does list contain Dill Pickles? false
+Let's add 3 jars of pickles.
+Let's remove the ice cream.
+Does list contain Pistachio Ice Cream? false
+Here is the whole shopping list:
+NAME                     CATEGORY          AISLE     QUANTITY  PRICE
+
+-------------------------------------------------------------------------
+Mayo                     Dressing / Mayo   1         1         2.99
+
+-------------------------------------------------------------------------
+Green Tea                Tea               6         2         1.99
+
+-------------------------------------------------------------------------
+Lucky Charms             Cereal            7         1         3.99
+
+-------------------------------------------------------------------------
+Admiral Ackbar Cereal    Cereal            7         1         4.99
+
+-------------------------------------------------------------------------
+Tide Pods                Laundry           9         4         1.99
+
+-------------------------------------------------------------------------
+Spam                     Can Meat          1         6         2.99
+
+-------------------------------------------------------------------------
+Honey Wheat              Pancake Mix       7         1         1.99
+
+-------------------------------------------------------------------------
+Clorox                   Bleach            9         1         6.99
+
+-------------------------------------------------------------------------
+Velveeta                 Cheese            13        2         3.99
+
+-------------------------------------------------------------------------
+I Can't Believe It's Not Butter            13        2         2.99
+
+-------------------------------------------------------------------------
+Uncle Bens               Rice              2         1         1.99
+
+-------------------------------------------------------------------------
+Dill Pickles             Condiments        4         3         2.99
+
+-------------------------------------------------------------------------
+```
+
 ## Features
 
 1. **Grocery Class**: Represents individual grocery items with properties such as name, category, aisle, price, and quantity.
